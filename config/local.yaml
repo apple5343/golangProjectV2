@@ -1,0 +1,8 @@
+storage_path: "database/users.db"
+grpc:
+  port: 44041
+  timeout: 12h
+token_ttl: 1h
+address : "localhost:8080"
+secret_storage: "secret"
+secret_jwt: "secret"

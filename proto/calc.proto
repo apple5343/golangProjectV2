@@ -1,0 +1,100 @@
+syntax = "proto3";
+package calc;
+option go_package = "github.com/apple5343/golangProjectV2";
+import "google/protobuf/any.proto";
+
+service Auth {
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc IsAdmin (IsAdminRequest) returns (IsAdminResponse);
+    rpc GetUserInfo(GetUserInfoRequest) returns (GetUserInfoResponse);
+}
+
+message Empty {}
+
+message IsAdminRequest{
+    int64 user_id = 1;
+}
+
+message IsAdminResponse{
+    bool is_admin = 1;
+}
+
+message GetUserInfoRequest{
+    int64 user_id = 1;
+}
+
+message GetUserInfoResponse{
+    string name = 1;
+}
+
+message RegisterRequest{
+    string name = 1;
+    string password = 2;
+}
+
+message RegisterResponse{
+    int64 user_id = 1;
+}
+
+message LoginRequest{
+    string name = 1;
+    string password = 2;
+}
+
+message LoginResponse{
+    string token = 1;
+}
+
+service Calculator{
+    rpc AddTask (AddTaskRequest) returns (AddTaskResponse);
+    rpc GetAllTasks (GetAllTasksRequest) returns (GetAllTasksResponse);
+    rpc GetWorkersInfo (Empty) returns (GetWorkersInfoResponse);
+    rpc UpdateDelays (UpdateDelaysRequest) returns (Empty);
+    rpc GetDelays (Empty) returns (GetDelaysResponse);
+    rpc GetTask (GetTaskRequest) returns (GetTaskResponse);
+}
+
+message MapEntry {
+    map<string, google.protobuf.Any> fieldMap = 1;
+}
+
+message AddTaskResponse{
+    string task = 1;
+}
+
+message AddTaskRequest{
+    int64 user_id = 1;
+    string task = 2;
+}
+
+message GetAllTasksRequest{
+    int64 user_id = 1;
+}
+
+message GetAllTasksResponse{
+    string tasks = 1;
+}
+
+message UpdateDelaysRequest{
+    string delays = 1;
+}
+
+
+message GetWorkersInfoResponse{
+    string  workers = 1;
+}
+
+
+message GetDelaysResponse{
+    string delays = 1;
+}
+
+message GetTaskRequest{
+    int64 task_id = 1;
+    int64 user_id = 2;
+}
+
+message GetTaskResponse{
+    string task = 1; //json в формате str
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/css/auth.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="notification" class="notification">уведомление</div>
+    <div class="container">
+        <div class="login-block window">
+            <h1>Вход</h1>
+            <input type="text" id="login-name-input" placeholder="Введите логин" class="input">
+            <input type="password" id="login-password-input" placeholder="Введите пароль" class="input">
+            <div class="buttons">
+                <button onclick="Change()">зарегистрироваться</button>
+                <button id="login-btn">войти</button>
+            </div>
+        </div>
+        <div class="register-block window hide">
+            <h1>Регистрация</h1>
+            <input type="text" id="register-name-input" placeholder="Введите логин" class="input">
+            <input type="password" id="register-password-input" placeholder="Введите пароль" class="input">
+            <input type="password" id="register-password2-input" placeholder="Повторите пароль" class="input">
+            <div class="buttons">
+                <button onclick="Change()">войти</button>
+                <button id="register-btn">зарегистрироваться</button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/scripts/auth.js"></script>
+</body>
+</html>
