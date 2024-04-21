@@ -16,7 +16,7 @@ function Register(){
     const name = document.getElementById("register-name-input").value
     const password = document.getElementById("register-password-input").value
     const password2 = document.getElementById("register-password2-input").value
-    RegisterRequest(name, password, password2).then(data => console.log(data)).catch(error => showNotification(error))
+    RegisterRequest(name.trim(), password.trim(), password2.trim()).then(data => console.log(data)).catch(error => showNotification(error))
 }
 
 function RegisterRequest(name, password, password2){
@@ -37,7 +37,7 @@ function RegisterRequest(name, password, password2){
 function Login(){
     const name = document.getElementById("login-name-input").value
     const password = document.getElementById("login-password-input").value
-    LoginRequest(name, password).then(data => {console.log(data); window.location.href = window.location.origin}).catch(error => showNotification(error))
+    LoginRequest(name.trim(), password.trim()).then(data => {console.log(data); window.location.href = window.location.origin}).catch(error => showNotification(error))
     
 }
 
