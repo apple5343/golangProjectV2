@@ -10,10 +10,6 @@
 Чтобы проверить работу можно просмотреть логи командой ```docker logs [CONTAINER_ID_OR_NAME]```. CONTAINER_ID_OR_NAME берется из ```docker ps```
 
 Для остановки пишем ```docker stop <CONTAINER ID>```
-### Через Go
-1. Выполняем ```git clone https://github.com/apple5343/golangProjectV2.git``` и переходим в папку с проектом
-2. В папке с проектом выполняем ```go mod tidy```
-3. Запускаем файл ```cmd/main.go```
 ### Через exe файл
 1. Выполняем ```git clone https://github.com/apple5343/golangProjectV2.git``` и переходим в папку с проектом
 2. Запускаем ```main.exe```
